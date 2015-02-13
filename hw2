@@ -1,0 +1,110 @@
+# PLOT 4
+# During the news coverage of the Olympics it was noted that this
+# Olympics had by far the greatest number of women competing and
+# that some countries had female athletes competing for the first time.
+
+# The data file is called London2012ALL_ATHLETES.rda
+# and contains information about every athlete who competed 
+# in the Olympics.
+
+# load( )
+load("London2012ALL_ATHLETES.rda")
+
+# There is one observation for each athlete. 
+# (Actually, about 20 athletes have two records if they
+# competed in different sporting events. Let's not worry about that.)
+
+#Q13. We are interested in the relationship between Sport and Sex. 
+# Examine the data frame and check which type of data each variable is.
+names(athletes)
+### Name : nominal
+### Sex : nominal
+### Sport : nominal
+### Country : nominal
+### MoreThan1Sport : ordinal or nominal is OK
+
+# The table() and sum() functions might be helpful for answering 
+# some of the questions below. 
+
+# How many athletes competed in the 2012 Olympics?
+# n.athletes <- your code here
+n.athletes <- nrow(athletes)
+
+# How many women competed?
+women.seq <- (athletes$Sex == "F")
+n.women <- sum(women.seq)
+
+# What proportion of the participants were women?
+# frac.women <- your code here
+frac.women <- n.women/n.athletes
+
+# How many sports were there?
+# n.sports <- your code here
+n.sports <- table(athletes$Sport)
+
+
+#Q14. Make a barplot of Sport and Sex that emphasizes the 
+# important differences. To do this, first make a table of 
+# Sex by Sport. This will be the input to barplot(). 
+# Make the barplot with the parameter beside = TRUE and 
+# and again with beside = FALSE. Determine which of these 
+# barplots provides the easiest comparison. 
+
+# athTab <- your code here
+# make two barplots
+athTab <-table(athletes$Sport, athletes$Sex)
+barplot(athTab, beside = TRUE)
+barplot(athTab, beside = FALSE)
+
+# what should beside be set to, T/F?
+# set.beside <- your answer
+set.beside <- T
+
+
+#Q15. Remake the barplot above, but this time switch the order 
+# of Sport and Sex in the call to table(). Use the value for
+# the beside parameter that you decided was best for the 
+# plot in Q 14. 
+
+# athTab2 <- table()
+# make barplot
+athTab2=table(athletes$Sex, athletes$Sport)
+barplot(athTab2, beside = TRUE)
+
+# Compare the barplot with (Sex, Sport) vs (Sport, Sex). 
+# Which makes a more interesting visual comparison, plot 1 or 2?
+# store your answer (1 or 2) in best.plot.
+
+# best.plot <- your answer
+best.plot <-athTab2=table(athletes$Sex, athletes$Sport)
+
+
+# Q16. Notice that the bars are in alphabetical order by sport.
+# To facilitate comparisons, we might want to arrange
+# the bars in order of participation in a sport. To do this,
+# call order() on the return value from making a table of Sport alone.
+# Assign this vector to a variable, say orderSport.
+# Then reorder your two-way table of Sport and Sex,
+# using the orderSport vector and [ ] to subset the table and rearrange
+# the rows/cols. The resulting barplot should show bars in 
+# increasing height.
+
+# orderSport <- your code here
+# barplot( your code here )
+
+
+orderSport <- order(table(athletes$Sport), decreasing = FALSE)
+barplot(table(athletes$Sex, athletes$Sport)[,orderSport], beside = TRUE)
+
+
+# Q17. Finally to make the plot more informaation rich, try turning
+# the x-axis labels on their side. To do this, find a parameter
+# in par() that will rotate the x-axis tick mark labels. Even though
+# you found the parameter in the par() function, this
+# parameter can be added in the call to barplot().
+# Also find and use a parameter to shrink the text for these labels. 
+# Lastly, add a title to the plot.
+
+barplot(table(athletes$Sex, athletes$Sport)[ , orderSport],
+        beside = TRUE, las = 3, cex.names = 0.5, ylim = c(0,1700),
+        main = "Gender Participation in Olympics")
