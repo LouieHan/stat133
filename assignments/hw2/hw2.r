@@ -19,8 +19,8 @@
 # b. SO2012Ctry which is a data frame with information about 
 # each country that had an athlete participate in the olympics
 
-# c. London2012ALL_ATHLETES.rda - a data frame which contains data
-# on individual atheletes who participated in the 2012 Olympics
+# c. London2012ALL_ATHLETES.rda - a data frame which contains the data
+# on individual atheletes who participated in the 2012 Olympic
 
 
 # We will be making 4 plots with these sources of data.
