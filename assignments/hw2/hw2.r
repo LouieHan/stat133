@@ -19,8 +19,8 @@
 # b. SO2012Ctry which is a data frame with information about 
 # each country that had an athlete participate in the olympics
 
-# c. London2012ALL_ATHLETES.rda - a data frame which contains the data
-# on individual atheletes who participated in the 2012 Olympic
+# c. London2012ALL_ATHLETES.rda - a data frame which contains data
+# on individual atheletes who participated in the 2012 Olympics
 
 
 # We will be making 4 plots with these sources of data.
@@ -112,8 +112,8 @@ plot(wr1500m$year, wr1500m$times_sec, type = "s")
 wr1500m$month[is.na(wr1500m$month)] = 6
 new_year <- wr1500m$year + (wr1500m$month)/12
 
-
 wr1500m$new_year <- new_year
+
 plot(wr1500m$new_year, wr1500m$times_sec, type = "s")
 
 
@@ -324,7 +324,7 @@ wonMedal = SO2012Ctry[SO2012Ctry$Total > 0, (1:13) ]
 world = map(database = "world", fill = TRUE, col = "grey")
 symbols(wonMedal$longitude, wonMedal$latitude, 
         circles= log(wonMedal$Total), 
-        add = TRUE, inches = FALSE, bg = myGold)
+        add = TRUE, inches = FALSE)
 
 
 #Q12. Remake the plot and fill in the circles with a partially
