@@ -3,21 +3,31 @@
 # Due Thursday February 26th by midnight 
 # This .r file should contain your code
 
+errMsg = function(err) print(paste("ERROR:", err))
+
 #### Function #1
 # Implement the function "listLengths". 
 
 # Input variable:
 # <data.list>: a list whose elements are vectors of varying length
 
+data.list <- list(1:3,4:17,8:34)
+data.list
+
 # Output variable:
 # <element.lengths>: a numeric vector whose entries are the lengths of each
 #   element of <data.list>
 
+
 listLengths <- function(data.list) {
-
-    # your code here
-
+  
+  # your code here
+  element.lengths <- sapply(data.list, length)
+  return(element.lengths)
 }
+
+listLengths(list(1:3,4:17,8:34))
+
 
 #### Function 2
 #### Implement the function "powers"
@@ -32,6 +42,12 @@ listLengths <- function(data.list) {
 
 powers <- function(x, k){
 
+int = 2
+x.powers <- x
+while(int==k){y = cbind(x.powers,x^int); int = int +1}
+  colnames(x.powers) <- c("x", paste("x^", 2:k, sep = ""))
+  return(x.powers)
+  
 }
 
  
@@ -65,8 +81,43 @@ powers <- function(x, k){
 # Put your code here
 recipeConversion <- function(recipe){
 
+  recipe.prime <- recipe
+  for(k in 1:nrow(recipe.prime)){
+    
+    section <- recipe.prime[k,]
+    if ((section[2] == "oz") | (section[2] == "ozs")){
+      convert.alpha <- (5 * round((section[1]*28.3)/5))
+      section[1] <- convert.alpha
+      section[2] <- "gr"
+    }
+    
+    if ((section[2] == "cup")| (section[2] == "cups")){
+      convert.beta <- (5*round((section[1]*236.6)/5))
+      section[1] <- convert.beta
+      section[2] <- "ml"
+    }
+  }
+  return(recipe.prime)
 }
 
+"
+recipe.metric <- recipe
+
+if recipe.metric$unit == cup
+recipe.metric$amount = amount*236.6
+
+if recipe.metric$unit == oz
+recipe.metric$amount = amount*28.3 
+
+if recipe.metric$unit == cup
+recipe.metric$unit == ml
+
+if recipe.metric$unit == oz
+recipe.metric$unit == gram
+
+
+return(recipe.metric)
+"
 
 #### Function #4a
 # Implement the function "bootstrapVarEst"
@@ -91,6 +142,9 @@ recipeConversion <- function(recipe){
 
 bootstrapVarEst <- function(x, B){
 
+  
+  
+  
 }
 
 #### Function #4b
@@ -130,5 +184,3 @@ jackknifeVarEst <- fuction(x){
 samplingVarEst <- function(  ){
 
 }
-
-
