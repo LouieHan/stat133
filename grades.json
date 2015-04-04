@@ -1,9 +1,23 @@
 {
     "login": "LouieHan", 
     "url": "git@github.com:LouieHan/stat133.git", 
-    "name": "Ryan Lee", 
-    "email": "yourfriendryanlee@berkeley.edu", 
-    "github_name": "LouieHan", 
-    "status": "enrolled", 
-    "grades": {}
+    "name": "yourName", 
+    "email": "email@berkeley.edu", 
+    "github_name": "github_name", 
+    "status": "enrolled/audit/concurrent", 
+    "grades": {
+        "hw1": {
+            "note": "", 
+            "hash": "b5a137b785aafc7e9611a95fd1cca854d1d16272", 
+            "earned": 20, 
+            "possible": 20, 
+            "penalty": 0, 
+            "parts": {
+                "hw1": {
+                    "possible": 20, 
+                    "earned": 20
+                }
+            }
+        }
+    }
 }
