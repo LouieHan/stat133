@@ -1,0 +1,7 @@
+fitModel: return coefficients, not full model  -1
+oneBoot  -4
+repBoot -4
+bootPlot -4
+no output -2
+
+Score: 5/20
