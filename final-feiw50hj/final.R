@@ -109,7 +109,7 @@ m <- matrix(rnorm(100, mean=8), nrow = 10, ncol=10)
  dim(ChickWeight)
 # To see the first few lines type
  head(ChickWeight)
-view(ChickWeight)
+#view(ChickWeight)
 # There are 4 variables in the dataframe:
 # > names(ChickWeight)
 # [1] "weight" "Time"   "Chick"  "Diet"  
@@ -323,7 +323,7 @@ standardizeVar <- function(m, cols=TRUE){
   
   for (i in 1:dim(m)[1]){
     
-    new.m = m[(i-1)*(dim(m)[1]])+1 - mean(m[1:dim(m)[1]])
+    #new.m = m[(i-1)*(dim(m)[1]])+1 - mean(m[1:dim(m)[1]])
 
   }
  }
@@ -414,10 +414,10 @@ NumJackpot <- function(k, B){
   return(truth)
 }
 
-NumJackpot(500,100)
-NumJackpot(500,500)
-NumJackpot(500,1000)
-NumJackpot(500,5000)
+#NumJackpot(500,100)
+#NumJackpot(500,500)
+#NumJackpot(500,1000)
+#NumJackpot(500,5000)
 
 
 # For B = 500 and each value of k = 100, 500, 1000, 5000
