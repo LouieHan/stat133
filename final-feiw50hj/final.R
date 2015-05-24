@@ -422,10 +422,10 @@ NumJackpot <- function(k, B){
 
 # For B = 500 and each value of k = 100, 500, 1000, 5000
 # Plot a histogram of the output from NumJackpot (i.e. four histograms)
+hist(NumJackpot(100,100)) # inga edited
 hist(NumJackpot(500,100))
-hist(NumJackpot(500,500))
-hist(NumJackpot(500,1000))
-hist(NumJackpot(500,5000))
+hist(NumJackpot(1000,100))
+hist(NumJackpot(5000,100))
 
 
 # <your plot here>
