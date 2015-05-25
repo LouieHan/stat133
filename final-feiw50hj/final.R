@@ -106,9 +106,9 @@ m <- matrix(rnorm(100, mean=8), nrow = 10, ncol=10)
 # For the next few tasks you will use the data frame ChickWeight
 # This data frame comes with R so you do not need to load any data.
 # To get the size of the data frame type
- dim(ChickWeight)
+## dim(ChickWeight)
 # To see the first few lines type
- head(ChickWeight)
+## head(ChickWeight)
 #view(ChickWeight)
 # There are 4 variables in the dataframe:
 # > names(ChickWeight)
@@ -276,7 +276,7 @@ prop.rain[5] <- sum(rain[[5]] > 0)
 # Make a plot with 6 panels and plot the histogram of the rainfall for each weather station
 # in a separate panel (there will be one empty panel)
 # use an apply statment to the the plotting
-par(mfrow=c(2,3))
+#par(mfrow=c(2,3))
 #??????????????????????????????????????????????????????????????????????/
 
 
@@ -319,14 +319,15 @@ GenNorm <- function(mean = 0, sd = 1, n = 1000, plot.hist = TRUE){
 #     we standardize by subtracting the mean of the column/row and dividing by the sd of the column/row
 
 #??????????????????????????????????????????????????????????????????????/
-standardizeVar <- function(m, cols=TRUE){
+# inga commented out, function not ready
+##standardizeVar <- function(m, cols=TRUE){
   
-  for (i in 1:dim(m)[1]){
+  ##for (i in 1:dim(m)[1]){
     
     #new.m = m[(i-1)*(dim(m)[1]])+1 - mean(m[1:dim(m)[1]])
 
-  }
- }
+  ##}
+ ##}
 
 
 
@@ -422,10 +423,10 @@ NumJackpot <- function(k, B){
 
 # For B = 500 and each value of k = 100, 500, 1000, 5000
 # Plot a histogram of the output from NumJackpot (i.e. four histograms)
-hist(NumJackpot(100,100)) # inga edited
-hist(NumJackpot(500,100))
-hist(NumJackpot(1000,100))
-hist(NumJackpot(5000,100))
+hist(NumJackpot(100,50)) # inga edited
+hist(NumJackpot(500,50))
+hist(NumJackpot(1000,50))
+hist(NumJackpot(5000,50))
 
 
 # <your plot here>
