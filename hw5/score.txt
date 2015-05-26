@@ -1,0 +1,13 @@
+Total: 0/25
+##!! Homework not attempt
+
+Part 1:  bml_functions.R
+a. bml.init 0/2
+
+b. bml.step 0/5
+
+c. bml.sim 0/2
+
+Part 2: bml_simulation.R 0/6
+
+Part 3: bml_comments and bml_figures 0/10
